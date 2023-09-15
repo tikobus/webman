@@ -17,7 +17,7 @@ class Project
     }
 
     static function vendorPath() {
-        $path = dirname(dirname(__DIR__));
+        $path = __DIR__;
         for ($i=0; $i < 10; $i++) {
             if (is_dir($path . '/vendor')) {
                 return $path . '/vendor';
