@@ -18,7 +18,7 @@ class Project
             }
         }
         rename($root . '/webman/.gitignore', $root . '/.gitignore');
-        selff::removeDir($root . '/webman');
+        self::removeDir($root . '/webman');
     }
 
     static function vendorPath() {
