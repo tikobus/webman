@@ -8,14 +8,9 @@ class Project
         $vendor = self::vendorPath();
         $root = dirname($vendor);
         $path = $vendor . '/workerman/webman';
-        if (file_exists($root . '/start.php')) {
-            return;
-        }
         self::copyDir($path, $root . '/webman');
         foreach (glob($root . '/webman/*') as $dir) {
-            if (!file_exists($root . '/' . basename($dir))) {
-                rename($dir, $root . '/' . basename($dir));
-            }
+            rename($dir, $root . '/' . basename($dir));
         }
         rename($root . '/webman/.gitignore', $root . '/.gitignore');
         self::removeDir($root . '/src');
@@ -29,7 +24,6 @@ class Project
                 return $path . '/vendor';
             }
             $path = dirname($path);
-            echo $path, "\n";
         }
         throw new \Exception("Not Found Vendor !", 1);
     }
