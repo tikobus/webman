@@ -13,7 +13,7 @@ class Project
             rename($dir, $root . '/' . basename($dir));
         }
         rename($root . '/webman/.gitignore', $root . '/.gitignore');
-        unlink($root . '/webman');
+        rmdir($root . '/webman');
     }
 
     static function vendorPath() {
