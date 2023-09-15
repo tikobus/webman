@@ -10,7 +10,9 @@ class Project
         $path = $vendor . '/workerman/webman';
         self::copyDir($path, $root . '/webman');
         foreach (glob($root . '/webman/*') as $dir) {
-            rename($dir, $root . '/' . basename($dir));
+            if (!file_exists($root . '/' . basename($dir))) {
+                rename($dir, $root . '/' . basename($dir));
+            }
         }
         rename($root . '/webman/.gitignore', $root . '/.gitignore');
         rmdir($root . '/webman');
