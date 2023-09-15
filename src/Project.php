@@ -8,6 +8,9 @@ class Project
         $vendor = self::vendorPath();
         $root = dirname($vendor);
         $path = $vendor . '/workerman/webman';
+        if (file_exists($root . '/start.php')) {
+            return;
+        }
         self::copyDir($path, $root . '/webman');
         foreach (glob($root . '/webman/*') as $dir) {
             if (!file_exists($root . '/' . basename($dir))) {
@@ -15,7 +18,7 @@ class Project
             }
         }
         rename($root . '/webman/.gitignore', $root . '/.gitignore');
-        // rmdir($root . '/webman');
+        selff::removeDir($root . '/webman');
     }
 
     static function vendorPath() {
@@ -45,5 +48,17 @@ class Project
         } else if (\file_exists($source) && ($overwrite || !\file_exists($dest))) {
             \copy($source, $dest);
         }
+    }
+
+    static function removeDir(string $dir): bool
+    {
+        if (\is_link($dir) || \is_file($dir)) {
+            return \unlink($dir);
+        }
+        $files = \array_diff(\scandir($dir), array('.', '..'));
+        foreach ($files as $file) {
+            (\is_dir("$dir/$file") && !\is_link($dir)) ? self::removeDir("$dir/$file") : \unlink("$dir/$file");
+        }
+        return \rmdir($dir);
     }
 }
