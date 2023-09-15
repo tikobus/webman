@@ -4,7 +4,7 @@ namespace Tikobus\Webman;
 
 class Project
 {
-    static function Init() {
+    static function InitApp() {
         $vendor = self::vendorPath();
         $root = dirname($vendor);
         $path = $vendor . '/workerman/webman';

@@ -29,7 +29,7 @@
     ],
     "scripts": {
         "post-package-install": [
-            "Tikobus\\Webman\\Project::Init"
+            "Tikobus\\Webman\\Project::InitApp"
         ]
     }
 }
