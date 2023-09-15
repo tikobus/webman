@@ -8,7 +8,7 @@ class Project
         $vendor = self::vendorPath();
         $root = dirname($vendor);
         $path = $vendor . '/workerman/webman';
-        copy_dir($path, $root . '/webman');
+        \copy_dir($path, $root . '/webman');
         foreach (glob($root . '/webman/*') as $dir) {
             rename($dir, $root . '/' . basename($dir));
         }
