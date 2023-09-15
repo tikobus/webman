@@ -1,0 +1,35 @@
+{
+    "name": "tikobus/webman",
+    "description": "Webman Project",
+    "type": "project",
+    "require": {
+        "workerman/webman": "^1.5",
+        "workerman/webman-framework": "^1.5",
+        "illuminate/database": "^10.23",
+        "illuminate/pagination": "^10.23",
+        "illuminate/events": "^10.23",
+        "symfony/var-dumper": "^6.3",
+        "vlucas/phpdotenv": "^5.5",
+        "workerman/crontab": "^1.0",
+        "webman/console": "^1.2",
+        "webman/redis-queue": "^1.2",
+        "webman/stomp": "^1.1",
+        "webman/event": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tikobus\\Webman\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "tikobus",
+            "email": "tikobus@qq.com"
+        }
+    ],
+    "scripts": {
+        "post-package-install": [
+            "Tikobus\\Webman\\Project::Init"
+        ]
+    }
+}
