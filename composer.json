@@ -28,7 +28,7 @@
         }
     ],
     "scripts": {
-        "post-package-install": [
+        "post-create-project-cmd": [
             "Tikobus\\Webman\\Project::InitApp"
         ]
     }
