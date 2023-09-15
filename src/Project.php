@@ -18,6 +18,7 @@ class Project
             }
         }
         rename($root . '/webman/.gitignore', $root . '/.gitignore');
+        self::removeDir($root . '/src');
         self::removeDir($root . '/webman');
     }
 
