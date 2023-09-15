@@ -3,8 +3,6 @@
     "description": "Webman Project",
     "type": "project",
     "require": {
-        "workerman/webman": "^1.5",
-        "workerman/webman-framework": "^1.5",
         "illuminate/database": "^10.23",
         "illuminate/pagination": "^10.23",
         "illuminate/events": "^10.23",
@@ -29,7 +27,7 @@
     ],
     "scripts": {
         "post-create-project-cmd": [
-            "Tikobus\\Webman\\Project::InitApp"
+            "composer create-project workerman/webman ."
         ]
     }
 }
