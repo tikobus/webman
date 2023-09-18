@@ -42,6 +42,15 @@
   "scripts": {
     "post-create-project-cmd": [
       "Tikobus\\Webman\\Project::InitApp"
+    ],
+    "post-package-install": [
+      "support\\Plugin::install"
+    ],
+    "post-package-update": [
+      "support\\Plugin::install"
+    ],
+    "pre-package-uninstall": [
+      "support\\Plugin::uninstall"
     ]
   }
 }
