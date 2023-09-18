@@ -13,7 +13,7 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "sh ./src/Script.sh"
+      "sh ./src/Install.sh"
     ]
   }
 }
