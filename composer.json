@@ -34,10 +34,7 @@
       "App\\": "./app",
       "app\\View\\Components\\": "./app/view/components",
       "Tikobus\\Webman\\": "src/"
-    },
-    "files": [
-      "./support/helpers.php"
-    ]
+    }
   },
   "scripts": {
     "post-create-project-cmd": [
