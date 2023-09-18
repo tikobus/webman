@@ -14,8 +14,9 @@ class Project
             rename($dir, $root . '/' . basename($dir));
         }
         rename($root . '/webman/.gitignore', $root . '/.gitignore');
-        // self::removeDir($root . '/src');
+        self::removeDir($root . '/src');
         self::removeDir($root . '/webman');
+        copy($root . '/vendor/webman/console/src/webman', $root . '/webman');
     }
 
     static function vendorPath() {
