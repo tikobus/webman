@@ -1,7 +1,5 @@
 #!/bin/bash
 
-rm ../composer.json
-rm -rf ../vendor
 composer create-project workerman/webman:1.5.4 project
 rm -f project/README.md
 mv project/* .
