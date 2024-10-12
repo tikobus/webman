@@ -1,6 +1,6 @@
 #!/bin/bash
 
-composer create-project workerman/webman:1.5.4 project
+composer create-project workerman/webman:1.5.9 project
 rm -rf vendor
 rm -f composer.*
 rm -f project/README.md
